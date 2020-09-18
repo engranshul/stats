@@ -4,4 +4,4 @@
 * enum usage in case something has fixed set of limited values. Eg primaryColors,
   matchResults etc
 * using tuple to manage type of fields in an array
-* date object
+* converting date string to date object 
