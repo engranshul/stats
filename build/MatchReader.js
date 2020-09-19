@@ -18,8 +18,8 @@ var CsvFileReader_1 = require("./CsvFileReader");
 var Utils_1 = require("./Utils");
 var MatchReader = /** @class */ (function (_super) {
     __extends(MatchReader, _super);
-    function MatchReader(fileName) {
-        return _super.call(this, fileName) || this;
+    function MatchReader() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MatchReader.prototype.mapRow = function (row) {
         return [

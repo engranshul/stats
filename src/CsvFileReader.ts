@@ -3,11 +3,19 @@ import { MatchResult } from './MatchResult';
 
 type MatchData = [Date, string, string, number, number, MatchResult, string];
 
-export abstract class CsvFileReader {
-  data: MatchData[] = [];
-
+export abstract class CsvFileReader<TypeOfData> {
+ 
+  data: TypeOfData[] = [];
+  /*  
+  below line is equivalent to :
+  filename : string;
+  constructor(filename: string) {
+    this.filename=filename;
+  }
+  */
   constructor(public fileName: string) {}
 
+  // below read method initializes above data variable
   public read() {
     this.data = fs
       .readFileSync(this.fileName, { encoding: 'utf-8' })
@@ -19,5 +27,5 @@ export abstract class CsvFileReader {
   }
 
   // below logic could be different according to what type of csv we need to read..
-  public abstract mapRow(row: string[]) : MatchData;
+  public abstract mapRow(row: string[]): TypeOfData;
 }
