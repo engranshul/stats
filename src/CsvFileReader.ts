@@ -1,10 +1,9 @@
 import fs from 'fs';
-import { dateStringToDate } from './Utils';
 import { MatchResult } from './MatchResult';
 
 type MatchData = [Date, string, string, number, number, MatchResult, string];
 
-export class CsvFileReader {
+export abstract class CsvFileReader {
   data: MatchData[] = [];
 
   constructor(public fileName: string) {}
@@ -18,17 +17,7 @@ export class CsvFileReader {
       })
       .map(this.mapRow);
   }
-  
-  // below logic could be different according to diff classes..
-  public mapRow(row: string[]): Matchdata {
-    return [
-      dateStringToDate(row[0]),
-      row[1],
-      row[2],
-      parseInt(row[3]),
-      parseInt(row[4]),
-      row[5] as MatchResult,
-      row[6],
-    ];
-  }
+
+  // below logic could be different according to what type of csv we need to read..
+  public abstract mapRow(row: string[]) : MatchData;
 }
