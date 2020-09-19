@@ -22,4 +22,5 @@
 
   const holdString=new HoldAnything<string>();
   holdString.data = "asalsjl";
+* inheritance vs composition
 
