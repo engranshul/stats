@@ -17,7 +17,7 @@ var MatchReader = /** @class */ (function () {
                 parseInt(row[3]),
                 parseInt(row[4]),
                 row[5],
-                row[6]
+                row[6],
             ];
         });
     };
