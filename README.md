@@ -22,5 +22,5 @@
 
   const holdString=new HoldAnything<string>();
   holdString.data = "asalsjl";
-* inheritance vs composition
+* inheritance(is-a relationship) vs composition(has-a)
 
